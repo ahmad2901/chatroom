@@ -1,15 +1,15 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
 
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
-import 'firebase/compat/auth';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
 import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-const firebaseConfig = {
+firebase.initializeApp({
   apiKey: "AIzaSyDiRU2pVReH2xju6iHk5btx11OauOgTcI4",
   authDomain: "chatroom-ahmad.firebaseapp.com",
   projectId: "chatroom-ahmad",
@@ -17,7 +17,7 @@ const firebaseConfig = {
   messagingSenderId: "28480751905",
   appId: "1:28480751905:web:f8918aa1f8f59e53001660",
   measurementId: "G-2E0CPMLCCF"
-};
+})
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
